@@ -16,4 +16,4 @@ const SquareStepRotDown : React.FC<SSProps> = (props : SSProps) => {
     )
 }
 
-export default SquareStepRotDown
+export default withContext(SquareStepRotDown)
