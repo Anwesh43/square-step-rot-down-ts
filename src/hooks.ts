@@ -14,6 +14,7 @@ export const useAnimatedScale = () => {
                     setScale((prev : number) => {
                         if (prev > 1) {
                             setAnimated(false)
+                            clearInterval(interval)
                             return 0 
                         }
                         return prev + scGap 
@@ -45,7 +46,7 @@ export const useDimension = () => {
 }
 
 export const useStyle = (w : number, h : number, scale : number) => {
-    const size : number = Math.min(w, h) 
+    const size : number = Math.min(w, h) / 20
     const sf : number = Math.sin(scale * Math.PI)
     const position = 'absolute'
     const background = 'indigo'
